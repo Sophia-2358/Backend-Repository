@@ -1,8 +1,9 @@
+import * as bookcontroller from '../controllers/bookController.js';
 import express from 'express';
-import * as bookControllers from '../controllers/bookController.js';
 
-const router = express.Router();
+const bookRoute = express.Router();
 
-router.get('/', bookControllers.getBooks);
+bookRoute.get('/all', bookcontroller.fetchAllBooks);
+bookRoute.post('/', bookcontroller.createBook);
 
-export default router;
+export default bookRoute;
